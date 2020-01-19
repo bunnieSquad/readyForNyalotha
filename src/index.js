@@ -31,7 +31,12 @@ app.get('/guild/:id', (req, res) => {
     res.render('guild', {"guild_id": guild_id})
 })
 
-app.get('/form/:guild/:question')
+app.get('/form/:guild/:question', (req, res) => {
+  res.render('form', {
+    "question":"Wrathion: Which direction do you run away during Burning Cataclysm?", 
+    "answer1": "Towards Wrathion's tail",
+    "answer2": "Towards a Scorching Blister"})
+})
 
 app.get('/form/:guild') // do a redirect to /form/:guild/1
 
