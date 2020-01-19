@@ -3,15 +3,18 @@ var app = express()
 
 let PORT = process.env.PORT || 8000
 
+app.use(express.urlencoded())
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.get('/', (req, res) => {
-  res.render('form', {
-    "question":"Wrathion: Which direction do you run away during Burning Cataclysm?", 
-    "answer1": "Towards Wrathion's tail",
-    "answer2": "Towards a Scorching Blister"})
+  // res.render('form', {
+  //   "question":"Wrathion: Which direction do you run away during Burning Cataclysm?", 
+  //   "answer1": "Towards Wrathion's tail",
+  //   "answer2": "Towards a Scorching Blister"})
+    res.render('index')
 })
 
 app.post('/guild/create', (req, res) => {
