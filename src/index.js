@@ -19,9 +19,16 @@ app.post('/guild/create', (req, res) => {
 
 app.get('/form/:guild/:question', (req, res) => {
   res.render('form', {
-    "question":"Wrathion: Which direction do you run away during Burning Cataclysm?", 
+    "boss": "Wrathion",
+    "question":"Which direction do you run away during Burning Cataclysm?",
+    "imageSrc": "https://wow.zamimg.com/uploads/guide/header/9472.jpg?1578087535",
+    "imageSolution": "https://i.giphy.com/media/KDJlxljNRtVVgQkiuW/giphy.webp",
+    "incorrectStatement": "You would've been enveloped in flames and died a painful death",
+    "correctOption": "option4",
     "answer1": "Towards Wrathion's tail",
-    "answer2": "Towards a Scorching Blister"})
+    "answer2": "Towards a Scorching Blister puddle",
+    "answer3": "Away from Wrathion's face",
+    "answer4": "Across the platform as far away from Wrathion as possible"})
 })
 
 app.get('/form/:guild') // do a redirect to /form/:guild/1
