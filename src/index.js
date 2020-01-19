@@ -8,7 +8,10 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('form', {
+    "question":"Wrathion: Which direction do you run away during Burning Cataclysm?", 
+    "answer1": "Towards Wrathion's tail",
+    "answer2": "Towards a Scorching Blister"})
 })
 
 app.post('/guild/create', (req, res) => {
