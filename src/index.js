@@ -3,12 +3,14 @@ var app = express()
 
 let PORT = process.env.PORT || 8000
 
+app.use(express.urlencoded())
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.get('/', (req, res) => {
-  res.render('index')
+    res.render('index')
 })
 
 app.post('/guild/create', (req, res) => {
